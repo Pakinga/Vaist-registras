@@ -19,6 +19,9 @@
         .form-signin .checkbox{
             margin-bottom: 10px;
         }
+        form-signin-heading-center{
+            text-align:center;
+        }
         .form-signin .checkbox{
             font-weight: normal;
         }
@@ -41,11 +44,22 @@
         .form-signin button{
              margin-top: 10px;
         }
+        .form-data input,
+        .form-data select{
+            max-width: 200px;
+        }
+        .form-data input{
+            border: 2px;
+            border-radius: 20px;
+        }
         .has-error{
             color: red;
         }
         .navbar-right{
             padding-right: 10px;
+        }
+        .text-right{
+            text-align:right;
         }
      </style>
 </html>

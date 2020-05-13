@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 @Component
 public class UserValidator implements Validator {
     private static final Pattern EMAIL_REGEX =
-            Pattern.compile("^[\\w\\d._-]+@[\\w\\d.-]+\\.[\\w\\d]{2,6}$");
+            Pattern.compile("^[\\w._-]+@[\\w.-]+\\.[\\w]{2,6}$");
 
     @Autowired
     private UserService userService;
@@ -39,7 +39,7 @@ public class UserValidator implements Validator {
 
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "NotEmpty");
         if (user.getEmail() != null && !EMAIL_REGEX.matcher(user.getEmail()).matches()) {
-            errors.rejectValue("emailAddress", "user.email.invalid");
+            errors.rejectValue("email", "Regex.userform.email");
         }
         /*
         if(!EmailValidator.getInstance().isValid(user.getEmail())) {
